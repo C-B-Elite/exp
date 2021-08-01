@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "exp": {
+      "main": "src/exp/main.mo",
+      "type": "motoko"
+    },
+    "exp_assets": {
+      "dependencies": [
+        "exp"
+      ],
+      "frontend": {
+        "entrypoint": "src/exp_assets/src/index.html"
+      },
+      "source": [
+        "src/exp_assets/assets",
+        "dist/exp_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.8.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
