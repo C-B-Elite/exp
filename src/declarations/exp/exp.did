@@ -1,0 +1,9 @@
+type List = 
+ opt record {
+       text;
+       List;
+     };
+service : {
+  greet: () -> (List);
+  test: () -> (List);
+}
