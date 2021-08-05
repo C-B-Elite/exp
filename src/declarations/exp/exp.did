@@ -1,9 +1,8 @@
-type List = 
- opt record {
-       text;
-       List;
-     };
 service : {
-  greet: () -> (List);
-  test: () -> (List);
+  getName: () -> (text) query;
+  getSM: () -> (record {caller: principal;});
+  getSMC: () -> (principal);
+  newCanister: () -> () oneway;
+  testGreet: (text) -> (text);
+  test_get_M: () -> (principal);
 }

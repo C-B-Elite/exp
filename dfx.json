@@ -4,6 +4,10 @@
       "main": "src/exp/main.mo",
       "type": "motoko"
     },
+    "canister2": {
+      "main" : "src/exp/canister2.mo",
+      "type": "motoko"
+    },
     "exp_assets": {
       "dependencies": [
         "exp"

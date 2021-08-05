@@ -1,0 +1,12 @@
+type canister2 = 
+ service {
+   getKV: () -> (vec record {
+                       text;
+                       nat;
+                     }) query;
+   getM: () -> (record {caller: principal;});
+   getMC: () -> (principal);
+   greet: (text) -> (text) query;
+   putKey: (text, nat) -> (bool);
+ };
+service : () -> canister2
