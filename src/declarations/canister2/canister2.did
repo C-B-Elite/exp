@@ -7,6 +7,7 @@ type canister2 =
    getM: () -> (record {caller: principal;});
    getMC: () -> (principal);
    greet: (text) -> (text) query;
-   putKey: (text, nat) -> (bool);
+   putKV: (text, nat) -> (bool);
+   test: () -> (text);
  };
 service : () -> canister2

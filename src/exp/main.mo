@@ -10,6 +10,7 @@ actor{
     greet : query (Text) -> async Text;
     getMC : () -> async Principal;
     getM : () -> async {caller : Principal};
+//    reTest : () -> async Text;
   };
 
   private stable var testCanister : ?TestCanister = null;
@@ -19,17 +20,14 @@ actor{
   };
 
   public shared func getSM() : async {caller : Principal}{
-    Debug.print("before");
     await Option.unwrap<TestCanister>(testCanister).getM()
-    Debug.print("hello")
-    Debug.print(await Option.unwrap<TestCanister>(testCanister).getKV())
   };
 
   public shared func putKV(text : Text, nat : Nat) : async Bool{
     await Option.unwrap<TestCanister>(testCanister).putKV(text, nat)
   };
   
-  public shared func getKV() : [(Text, Nat)]{
+  public shared func getKV() : async [(Text, Nat)]{
     await Option.unwrap<TestCanister>(testCanister).getKV()
   };
 

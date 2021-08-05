@@ -4,7 +4,8 @@ export const idlFactory = ({ IDL }) => {
     'getM' : IDL.Func([], [IDL.Record({ 'caller' : IDL.Principal })], []),
     'getMC' : IDL.Func([], [IDL.Principal], []),
     'greet' : IDL.Func([IDL.Text], [IDL.Text], ['query']),
-    'putKey' : IDL.Func([IDL.Text, IDL.Nat], [IDL.Bool], []),
+    'putKV' : IDL.Func([IDL.Text, IDL.Nat], [IDL.Bool], []),
+    'test' : IDL.Func([], [IDL.Text], []),
   });
   return canister2;
 };

@@ -17,11 +17,11 @@ actor class canister2(){
     entries := [];
   };
 
-  public shared(msg) func reTest() : async Text{
-    "re test"
+  public func test() : async Text {
+    "nice to meet you"
   };
 
-  public shared(msg) func putKey(text : Text, nat : Nat) : async Bool{
+  public shared(msg) func putKV(text : Text, nat : Nat) : async Bool{
     map.put(text, nat);
     true
   };
@@ -31,7 +31,7 @@ actor class canister2(){
   };
 
   public query func greet(name : Text) : async Text {
-    "hello" # name
+    "hello " # name
   }; 
 
   public shared(msg) func getMC() : async Principal{

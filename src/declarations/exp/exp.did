@@ -1,8 +1,13 @@
 service : {
+  getKV: () -> (vec record {
+                      text;
+                      nat;
+                    });
   getName: () -> (text) query;
   getSM: () -> (record {caller: principal;});
   getSMC: () -> (principal);
   newCanister: () -> () oneway;
+  putKV: (text, nat) -> (bool);
   testGreet: (text) -> (text);
   test_get_M: () -> (principal);
 }
